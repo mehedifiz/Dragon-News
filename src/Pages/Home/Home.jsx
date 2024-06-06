@@ -2,24 +2,25 @@ import Head from "../Shared/Head";
 import Leftnsv from "../Shared/Leftnsv";
 import Nav from "../Shared/Nav";
 import Rightnav from "../Shared/Rightnav";
+import Breaking from "./Breaking";
 
 const Home = () => {
     return (
         <div>
             <Head></Head>
+            <Breaking></Breaking>
 
             <Nav></Nav>
-            <h2 className="text-centerfont-pop font-extrabold">Home page </h2>
 
-            <div className="grid lg:grid-cols-4 gap-6">
-                <div>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div className="border">
                     <Leftnsv></Leftnsv>
                 </div>
 
-                <div className="col-span-2">
+                <div className="md:col-span-2 border">
                     <h2 className="text-4xl">news</h2>
                 </div>
-                <div>
+                <div className="border">
                     <Rightnav></Rightnav>
                 </div>
             </div>
