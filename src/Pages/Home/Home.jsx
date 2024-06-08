@@ -11,13 +11,15 @@ const Home = () => {
     console.log(newses)
     return (
         <div>
+            <div className="">
             <Head></Head>
             <Breaking></Breaking>
 
             <Nav></Nav>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div className="">
+                <div className=" ">
                     <Leftnsv></Leftnsv>
                 </div>
 {/* news container */}

@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 const Newscard = ({news}) => {
 
-    const {title ,thumbnail_url ,details , _id} =news
+    const {title ,thumbnail_url ,details , _id,image_url} =news
     return (
         <div className="card bg-base-100 shadow-xl mb-16">
-  <figure><img src={thumbnail_url} alt="Shoes" /></figure>
+  <figure><img src={image_url} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">{title}</h2>
 

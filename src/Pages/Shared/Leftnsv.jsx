@@ -16,7 +16,7 @@ const Leftnsv = () => {
             <h2 className="pl-5 py-5 bg-slate-400 text-black text-2xl font-semibold w-ful text-center">National News</h2>
 
                 {
-                    data.map(data => <li key={data.id} className="list-none text-center py-5 text-gray-300">{data.name}</li>)
+                    data.map(data => <li key={data.id} className="list-none text-center py-5 ">{data.name}</li>)
                 }
 
            
