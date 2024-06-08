@@ -1,8 +1,24 @@
 import { Link, NavLink } from "react-router-dom";
 import userDefaultProfile from '../../assets/user.png'
+import { useContext } from "react";
+import { AuthContex } from "../../firebase/Authprovider";
 
 
 const Nav = () => {
+
+  const{user , logout} = useContext(AuthContex)
+
+  const handleLogout =()=>{
+    logout()
+    
+    .then(result =>{
+      console.log(result)
+    })
+
+    .catch(error =>{
+      console.log(error)
+    })
+  }
 
     const navlinks = <>
       <li><NavLink to='/'>Home</NavLink></li>
@@ -39,8 +55,16 @@ const Nav = () => {
     <img src={userDefaultProfile}/>
   </div>
 </div>
-   <Link to='login'>
-   <button className="btn">Login</button></Link>
+
+{
+    user ? <button  onClick={handleLogout} className="btn">Sign Out</button>
+  
+
+  : <Link to='/login'>
+  <button className="btn">Login</button></Link>
+}
+
+  
   </div>
 </div>
     );

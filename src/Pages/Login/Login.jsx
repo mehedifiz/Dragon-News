@@ -1,16 +1,32 @@
 import { Link } from "react-router-dom";
 import Nav from "../Shared/Nav";
+import { useContext } from "react";
+import { AuthContex } from "../../firebase/Authprovider";
 
 
 const Login = () => {
 
+const {login} = useContext(AuthContex)
+
     const handlelogin =e =>{
         e.preventDefault()
+
+   
+
         console.log(e.currentTarget)
         const form = new FormData(e.currentTarget)
+        const email = (form.get('email'))
+        const password = (form.get('password'))
+        console.log(email , password)
 
+        login(email  ,password)
 
-        console.log(form.get('email') )
+        .then(result =>{
+          console.log(result.user)
+        })
+        
+
+     
     }
     return (
         <div>
